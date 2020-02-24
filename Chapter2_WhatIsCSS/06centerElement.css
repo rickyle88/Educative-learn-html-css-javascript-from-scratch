@@ -1,0 +1,12 @@
+div {
+    border: 5px solid blue;
+}
+
+h1{    
+    width: 50%;
+    border: 5px solid red;
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: center;
+}
+  

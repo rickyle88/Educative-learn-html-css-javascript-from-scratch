@@ -1,0 +1,18 @@
+/* id selectors are the most important, followed by class selectors, and finally, type selectors.
+
+The second p element’s color is blue, since class has more importance than type. The third p element’s color is green since id has more importance than both class and type.
+
+However, the font-size property is not overwritten by either the class or id selectors, so it remains the same for all p elements. */
+
+p {
+	font-size: 1.5em;
+	color: red;
+}
+
+.blue {
+	color: blue;
+}
+
+#greenParagraph {
+	color: green;
+}
