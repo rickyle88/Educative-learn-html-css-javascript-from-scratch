@@ -1,0 +1,78 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with HTML forms</title>
+</head>
+
+<body>
+    <h1>Login Page</h1>
+    <form>
+        <!-- Text boxes -->
+        <label for="userName">
+            User Name:
+            <input type="text" id="userName" name="userName">
+        </label>
+        <label for="password">
+            Password:
+            <input type="password" id="password" name="password">
+        </label>
+        <!-- Text area -->
+        <label for="multiLineInput">
+            <p>This is an input element that can include new lines:</p>
+            <textarea rows="5" cols="50" id="multiLineInput"></textarea>
+        </label>
+
+        <!-- Dropdown -->
+        <select id="selector">
+            <optgroup label="group1">
+                <option>Option 1</option>
+                <option>Option 2</option>
+            </optgroup>
+            <optgroup label="group2">
+                <option>Option 3</option>
+                <option>Option 4</option>
+            </optgroup>
+        </select>
+
+        <!-- Radio buttons -->
+        <h3>What time is best to give you a call</h3>
+        <label for="morning">
+            Morning
+            <input type="radio" id="morning" name="calltime">
+        </label>
+
+        <label for="aftenoon">
+            Afternoon
+            <input type="radio" id="aftenoon" name="calltime" checked>
+        </label>
+
+        <label for="evening">
+            Evening
+            <input type="radio" id="evening" name="calltime">
+        </label>
+
+        <!-- Check boxes -->
+        <h3>Food I like the most</h3>
+        <label for="chicken">
+            Chicken
+            <input type="checkbox" id="chicken" name="food" checked>
+        </label>
+        <label for="pork">
+            Pork
+            <input type="checkbox" id="pork" name="food">
+        </label>
+        <label for="beef">
+            Beef
+            <input type="checkbox" id="beef" name="food">
+        </label>
+
+        <!-- Reset button -->
+        <button type="reset">Reset everything</button>
+        <!-- Submit button -->
+        <button type="submit">Submit form</button>
+    </form>
+</body>
+
+</html>
