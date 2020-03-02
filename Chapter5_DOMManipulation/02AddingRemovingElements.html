@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="content">
+        <p>This element will be removed</p>
+    </div>
+    <script>
+        // Create new element
+        let h1 = document.createElement('h1');
+        h1.innerHTML = "A new HTML element";
+
+        // Attach h1 to div id=content
+        let content = document.querySelector('#content');
+        content.appendChild(h1);
+
+        // Remove p element
+        let contentParagraph = document.querySelector('#content>p');
+        let oldElement = content.removeChild(contentParagraph);
+
+        // Output p element
+        console.log(oldElement.innerHTML);
+
+//         Exercise #
+// Create an unordered list with at least three list items using only Javascript. The unordered list should show up in the HTML document and output correctly.
+
+        // Create ul and li elements
+        let ulList = document.createElement('ul');
+        let li1 = document.createElement('li');
+        li1.innerHTML = 'A1';
+        let li2 = document.createElement('li');
+        li2.innerHTML = 'A2';
+        let li3 = document.createElement('li');
+        li3.innerHTML = 'A3';
+
+        // Attach li to ul 
+        ulList.appendChild(li1);
+        ulList.appendChild(li2);
+        ulList.appendChild(li3);
+
+        // Query body element
+        content = document.querySelector('body');
+
+        // Append ul to body (content)
+        content.appendChild(ulList);
+
+    </script>
+</body>
+
+</html>

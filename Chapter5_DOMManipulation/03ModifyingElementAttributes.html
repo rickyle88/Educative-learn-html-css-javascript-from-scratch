@@ -1,0 +1,45 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="logo">Learn DOM Manipulation with Javascript</h1>
+    <label for="question">What do you want to learn about the DOM?</label>
+    <input type="text" name="question" id="question" placeholder="Insert Question Here">
+
+
+    <!-- Exercise # -->
+<!-- Modify the following ordered list programmatically to use Roman numerals for the list items. -->
+    <h1>How to modify an HTML element:</h1>
+    <ol>
+      <li>Access the <em>element node</em> associated with the HTML element using <code>document.querySelector()</code></li>
+      <li>Use the element node's <em>properties</em> to modify the actual element.</li>
+    </ol>
+
+    <script>
+        let h1 = document.querySelector('h1');
+        let input = document.querySelector('input[type=text');
+
+        console.log("input box attribute name in array: " + input.getAttributeNames());
+        for (let i = 0; i < input.getAttributeNames().length; i++) {
+            console.log("input box attribute name in array: " + input.getAttributeNames()[i]);
+        }
+
+        console.log("input type:", input.getAttribute('type'));
+
+        input.setAttribute('type', "checkbox");
+        input.removeAttribute('placeholder');
+
+        // Excercises
+        // Select ol element
+        let olElement = document.querySelector('ol');
+        olElement.setAttribute('type','i');
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hightlight{
+            color: blue;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Highlight this element on a click</h1>
+
+    <script>
+        // Get h1 element from DOM 
+        let h1 = document.querySelector('h1');
+
+        // Add event listener 
+        h1.onclick = function(){
+            // Add classh hightlight to h1
+            this.classList.add('hightlight');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise: DOM manipulations using onclick event listener</title>
+    <style>
+        * {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        button {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: normal;
+            font-size: 3em;
+            text-align: center;
+            border: 2px solid #ff7272;
+            width: 50%;
+            margin: 20px auto;
+            padding: 20px 40px;
+            color: white;
+            background-color: #ff7272;
+            display: block;
+            cursor: pointer;
+        }
+
+        button:hover {
+            color: #ff7272;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button">Click Me!</button>
+    <!-- Modify the onclick event listener to add a <p> element that says Clicked! every time the <button> is clicked.
+ -->
+
+    <script>
+        // random color generator 
+        var randomColor = function () {
+            var rvalue = function () {
+                return Math.round(Math.random() * 255);
+            }
+
+            return 'rgb(' + rvalue() + "," + rvalue() + "," + rvalue() + ")";
+        }
+
+        // Get button element from DOM
+        let button = document.querySelector('button');
+
+        // create event listener to change background color on button click
+        button.onclick = function () {
+            this.style.backgroundColor = randomColor();
+            this.style.color = randomColor();
+        }
+    </script>
+</body>
+
+</html>

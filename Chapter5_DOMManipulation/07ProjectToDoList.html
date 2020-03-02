@@ -1,0 +1,97 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./07ProjectToDoList.css">
+</head>
+
+<body>
+    <div id="todos">
+        <h1>To-Dos</h1>
+        <ul id="todoList">
+
+        </ul>
+        <div class="addTodo">
+            <input type="text" id="newTodo" placeholder="Add To-Do">
+            <button id="add">Add</button>
+        </div>
+    </div>
+
+
+    <script>
+        // CSS class
+        // .checked > label {
+        //text-decoration: line-through;
+        //}
+
+        // Toggle class checked 
+        let toggleCheck = function(){
+            let parent = this.parentNode;
+            parent.classList.toggle('checked');
+        }
+
+        let deleteTodo = function(){
+            let li = this.parentNode;
+            // let ul = document.getElementById('todoList');
+            // ul.removeChild(li);
+            li.remove();
+        }
+
+        // Function that creates a new To-Do item
+        let createTodo = function (todo) {
+
+            let li = document.createElement('li');
+
+            // create an event listener on <input> elements
+            let checkbox = document.createElement('input');
+            // checkbox.setAttribute('type', 'checkbox');
+            checkbox.type = "checkbox";
+            checkbox.onclick = toggleCheck;
+
+            let label = document.createElement('label');
+            label.innerHTML = todo;
+
+            // // create an event listener on <button> delete elements
+            let button = document.createElement('button');
+            button.classList.add('delete');
+            button.innerHTML = 'Delete';
+            button.onclick = deleteTodo ;
+
+            li.appendChild(checkbox);
+            li.appendChild(label);
+            li.appendChild(button);
+
+            return li;
+        }
+
+        // Exercise #Use your createTodo function within an event listener to create a new To-Do item using the “Add Todo” text input.
+        //*the event listener should only create a new To-Do if the input’s value is not empty
+        //*the event listener should place the newly created to-do within the unordered list with the id todoList
+        let addButton = document.getElementById('add');
+
+        addButton.onclick = function () {
+            // store the button's parent element (.addTodo <div>) in a variable
+            var parent = this.parentNode;
+            // store the input, which is the *first* child element of the .addTodo <div>
+            var input = parent.children[0];
+
+             // write your event listener code here
+  	            // get the input's value
+  	            // if input isn't empty, create a new element and add it to the unordered list
+            let inputValue = input.value;
+            if(inputValue!==""){
+                // Create li - todo item and append to ul
+                let todoList = document.getElementById('todoList');
+                todoList.appendChild(createTodo(inputValue));
+
+                // Reset input
+                input.value = '';
+            }
+        }
+
+    </script>
+</body>
+
+</html>

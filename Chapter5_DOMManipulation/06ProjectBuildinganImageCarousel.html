@@ -1,0 +1,84 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Carousel</title>
+    <link rel="stylesheet" href="./06ProjectBuildinganImageCarousel.css">
+</head>
+
+<body>
+    <div class="imageCarousel">
+        <img src="./img/img1.jpg" alt="">
+        <button id="prev-button"><</button>
+        <button id="next-button">></button>
+    </div>
+    <script>
+        // we will store this list of photos as an array of image URLs:
+        let images = ["./img/img1.jpg", "./img/img2.jpg", "./img/img3.jpg", "./img/img4.jpg", "./img/img5.jpg"]
+
+        // We should also create a variable that stores the index position the image carousel is at in the array of URLs. The <img> tag’s src URL matches the first index position of the array, so the variable declaration should look something like this:
+        let currentIndex = 0;
+
+        // Exercise #
+        // Implement a function named incrementIndex that updates the index position, and goes back to the beginning of the array if the index reaches the end of the array, as shown in the diagram below.
+        // var incrementIndex = function () {
+        //     console.log(currentIndex);
+        //     currentIndex = currentIndex + 1;
+        //     if (currentIndex > images.length - 1) { currentIndex = 0 }
+        //      return currentIndex;
+        // }
+
+        var incrementIndex = function () {
+            //write your code here
+            if (currentIndex === (images.length - 1)) {
+                currentIndex = 0;                
+            }else{
+                currentIndex++;
+            }            
+
+            return currentIndex;
+        }
+
+        // Exercise #Now that you’ve implemented a way to increment/cycle the array index, create an event listener for the next button that calls incrementIndex() and updates the <img> element’s src attribute.
+
+        // create an event listener for a #next-button click
+	        // increment the index
+	        // set the img src to the next URL in the images array
+        let next = document.getElementById('next-button');
+
+        let img = document.querySelector('img');
+
+        
+        next.onclick = function(){
+            let indexFunction = incrementIndex(currentIndex);
+            console.log(indexFunction);
+            img.setAttribute('src',images[indexFunction]);
+        }
+
+        // Exercise #
+        //First, create a function named decrementIndex, which updates currentIndex by decrementing it and cycles to the last array index position if it goes past the first index position, as shown in this diagram.
+        let decrementIndex = function(){
+            currentIndex--;
+            if(currentIndex < 0){
+                currentIndex = 0;
+            }
+            return currentIndex;
+        }
+
+
+        var prev = document.getElementById('prev-button');
+
+        // create an event listener for a #prev-button click
+	        // decrement the index
+	        // set the img src to the previous URL in the images array
+        prev.onclick = function(){
+            let indexFunction = decrementIndex(currentIndex);
+            console.log(indexFunction);
+            img.setAttribute('src',images[indexFunction]);
+        }
+
+    </script>
+</body>
+
+</html>

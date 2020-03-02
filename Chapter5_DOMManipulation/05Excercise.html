@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element.classList Exercise</title>
+    <style>
+        .invisible {
+            opacity: 0;
+        }
+
+        .img {
+            opacity: 1;
+            /* width: 100%; */
+            /* margin: 40px auto; */
+            /* display: block; */
+        }
+
+        .imgContainer {
+            width: 50%;
+            margin: 20px auto;
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="imgContainer">
+        <img src="https://img.grouponcdn.com/sparta/48i8rEQ6LGyuB5wYfDDEJttgt2Bs/48-258x243.png">
+    </div>
+
+    <button>Show/Hide Image</button>
+
+    <script>
+        // Get img element from DOM
+        let button = document.querySelector('button');
+
+        let img = document.querySelector('img');
+
+        // Add invisible class
+        button.onclick = function () {
+            if (img.classList.contains('invisible')) {
+                console.log("Invisible");
+                img.classList.remove('invisible');
+
+            } else {
+                img.classList.add('invisible');
+            }
+
+        }
+    </script>
+</body>
+
+</html>

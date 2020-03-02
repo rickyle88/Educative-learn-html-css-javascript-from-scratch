@@ -1,14 +1,61 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <h1>Hello World</h1>
+    <h1 id="h1ID">Hello World</h1>
+    <h2>H2</h2>
+
+    <h1>To-Do Items</h1>
+    <ul id="todos">
+        <li>Get groceries</li>
+        <li>Go for a run</li>
+        <li>Learn web development</li>
+    </ul>
+
+    <!-- Given the following HTML, find all the elements with the class red, and change their color to blue. -->
+    <h1>Lorem Ipsum</h1>
+    <p class="red">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat iaculis nunc eget varius.
+        Nullam lacus quam, pellentesque a dictum sed, mollis id tortor. Duis ac vehicula enim. Sed nec sem quis risus
+        pharetra porta eu a risus. Cras tempor sollicitudin metus. Quisque quis sodales mauris.</p>
+    <p>Etiam mattis neque nisi, sit amet ullamcorper est finibus vulputate. Morbi id cursus est. Nunc vestibulum diam
+        quis orci ultrices rhoncus. In scelerisque velit faucibus, mattis leo eu, sollicitudin lacus. Integer posuere
+        molestie facilisis. Praesent sem ligula, sollicitudin vitae arcu a, tristique porttitor ligula.</p>
+    <h2 class="red">Ut Sollicitudin</h2>
+    <p>Ut sollicitudin, nisl aliquet tristique auctor, nibh nibh imperdiet dui, ut condimentum est quam id tellus. Etiam
+        ac nisi vel neque aliquet molestie. Ut non suscipit urna. Integer luctus suscipit tellus, eu suscipit lorem
+        commodo in. Quisque odio risus, sodales ut volutpat nec, vestibulum quis elit. Pellentesque massa nisi, dapibus
+        eget tempor eu, gravida sed nisi.</p>
+    <p class="red">Etiam pharetra, ante eget porta auctor, nisi massa finibus odio, et dapibus sem elit nec purus.
+        Aenean ut risus ut velit blandit tristique. Nunc quis ullamcorper ipsum. Interdum et malesuada fames ac ante
+        ipsum primis in faucibus. Aliquam sed ex pharetra, consectetur nunc ac, laoreet nisl. Fusce sed iaculis orci.
+    </p>
+
     <script>
         let h1 = document.querySelector('h1');
         h1.innerHTML = "We just modified HTML using Javascript";
+
+        let h2 = document.querySelector('h2');
+        h2.outerHTML = "<h3>H3</h3>";
+
+
+
+        let todoItems = document.querySelectorAll('#todos li');
+        console.log(todoItems);
+        for (let i = 0; i < todoItems.length; i++) {
+            todoItems[i].innerHTML = "Todo Item # " + (i + 1);
+        }
+
+        let classRed = document.querySelectorAll('.red');
+        for(let i = 0; i < classRed.length; i++){
+            classRed[i].style.color = 'blue';
+        }
+
     </script>
 </body>
+
 </html>

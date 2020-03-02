@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="inputContent"></h1>
+    <input type="text" name="textInput" id="textInput" placeholder="Write here to change the h1 element's contents">
+
+    <script>
+        // Data binding
+        let h1 =document.querySelector('h1');
+        let input = document.querySelector('input[type=text]');
+
+        input.oninput = function(){
+            h1.innerHTML = this.value;
+        }
+    </script>
+</body>
+</html>
